@@ -40,7 +40,8 @@
 <p>Here we explore the use of Collaborative filtering (<a href="https://en.wikipedia.org/wiki/Collaborative_filtering">Wikipedia</a>) in order to make our recommendations. Collaborative Filtering can be done with various methods. Our chosen methods was to do an item-item collaborative filtering which in essence says "users who bought x also bought y". This method first applies a similarity between items. There is then an option to do an additional user-based filtering to find individual recommendations, which we will also do.</p>
 
 <p>For this use of item-based collaborative filtering, we'll be finding the similarity of the movies to each other by finding the Cosine Similarity between matrices. Denoted: 
-<img src="https://upload.wikimedia.org/math/4/e/4/4e45dc7ae582130813e804f793f24ead.png" alt="Similarity Function"> Based on users reviews, the rated movies are turned into a matrix where each movie has a list of movies that are similar to them. These matrix rows are then compared to with each other to get a similarity rating.</p>
+<img src="https://upload.wikimedia.org/math/4/e/4/4e45dc7ae582130813e804f793f24ead.png" alt="Similarity Function"> 
+Based on users reviews, the rated movies are turned into a matrix where each movie has a list of movies that are similar to them. These matrix rows are then compared to with each other to get a similarity rating.</p>
 
 <p>From there the user layer is applied which takes the user's seen movies and finds the movies most similar to the ones already watched. This list is then sorted by similarity rating and output to a file.</p>
 
