@@ -1,50 +1,67 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>Recommender System by ARubberDucky</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.com/ARubberDucky/recommendercollabfiltering">View On GitHub</a></li>
-          <li class="downloads"><a href="https://github.com/ARubberDucky/recommendercollabfiltering/zipball/master">ZIP</a></li>
-          <li class="downloads"><a href="https://github.com/ARubberDucky/recommendercollabfiltering/tarball/master">TAR</a></li>
-          <li class="title">DOWNLOADS</li>
-        </nav>
-      </div><!-- end header -->
+    <section class="page-header">
+      <h1 class="project-name">Recommender System</h1>
+      <h2 class="project-tagline">Collaborative Filtering</h2>
+      <a href="https://github.com/ARubberDucky/recommendercollabfiltering" class="btn">View on GitHub</a>
+      <a href="https://github.com/ARubberDucky/recommendercollabfiltering/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/ARubberDucky/recommendercollabfiltering/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <div class="wrapper">
+    <section class="main-content">
+      <h2>
+<a id="description" class="anchor" href="#description" aria-hidden="true"><span class="octicon octicon-link"></span></a>Description</h2>
 
-      <section>
-        <div id="title">
-          <h1>Recommender System</h1>
-          <p>Using Collaborative Filtering</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.com/ARubberDucky">ARubberDucky</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
+<p>For businesses it is important to have knowledge about what users enjoy buying in order to provide them with better shopping experience. For example, a person buying a new television may frequently buy a surge protector to go along with it. What a recommender system does calculate the probability that a person consuming an item would likely need. Providing an opportunity for the business to sell another item.</p>
 
-        <p>Using Collaborative Filtering I've taken the MovieLens (1 Million) sized dataset and made a recommender system to recommend movies to each user. </p>
+<p>For this project we will be applying the same logic to movie recommendations. Given a history of what a user has watched, we will try to recommend items that they would also be interested in seeing.</p>
 
-<p>For 5 users, a quarter of their watched history was removed from the data set. The algorithm was then run to see if it could predict some of the movies the users had seen.</p>
-      </section>
+<h2>
+<a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h2>
 
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+<h3>
+<a id="data-set" class="anchor" href="#data-set" aria-hidden="true"><span class="octicon octicon-link"></span></a>Data Set</h3>
+
+<p>The data set used for this project comes from the GroupLens Movie data set of 1 million ratings (<a href="http://grouplens.org/datasets/movielens/">GroupLens</a>). The dataset contains demographic information and rating data for over 6000 users for 4000 movies.</p>
+
+<h3>
+<a id="methodology" class="anchor" href="#methodology" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methodology</h3>
+
+<p>Here we explore the use of Collaborative filtering (<a href="https://en.wikipedia.org/wiki/Collaborative_filtering">Wikipedia</a>) in order to make our recommendations. Collaborative Filtering can be done with various methods. Our chosen methods was to do an item-item collaborative filtering which in essence says "users who bought x also bought y". This method first applies a similarity between items. There is then an option to do an additional user-based filtering to find individual recommendations, which we will also do.</p>
+
+<p>For this use of item-based collaborative filtering, we'll be finding the similarity of the movies to each other by finding the Cosine Similarity between matrices. Denoted: 
+<img src="https://upload.wikimedia.org/math/4/e/4/4e45dc7ae582130813e804f793f24ead.png" alt="Similarity Function"> Based on users reviews, the rated movies are turned into a matrix where each movie has a list of movies that are similar to them. These matrix rows are then compared to with each other to get a similarity rating.</p>
+
+<p>From there the user layer is applied which takes the user's seen movies and finds the movies most similar to the ones already watched. This list is then sorted by similarity rating and output to a file.</p>
+
+<h2>
+<a id="results" class="anchor" href="#results" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results</h2>
+
+<p>Coming soon.</p>
+
+<h2>
+<a id="discussion" class="anchor" href="#discussion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Discussion</h2>
+
+<p>Coming soon</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/ARubberDucky/recommendercollabfiltering">Recommender System</a> is maintained by <a href="https://github.com/ARubberDucky">ARubberDucky</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
   </body>
 </html>
