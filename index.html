@@ -44,15 +44,23 @@
 
 <p>From there the user layer is applied which takes the user's seen movies and finds the movies most similar to the ones already watched. This list is then sorted by similarity rating and output to a file.</p>
 
+<h3>
+<a id="procedure" class="anchor" href="#procedure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Procedure</h3>
+
+<p>To measure the quality of the results. 3 random users were selected at random and 5 random movies were removed from their data set. 
+In an ideal scenario the recommendation system will recommend the movies which were removed to the user.</p>
+
 <h2>
 <a id="results" class="anchor" href="#results" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results</h2>
 
-<p>Coming soon.</p>
-
 <h2>
-<a id="discussion" class="anchor" href="#discussion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Discussion</h2>
+<a id="results-and-discussion" class="anchor" href="#results-and-discussion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results and Discussion</h2>
 
-<p>Coming soon</p>
+<p>Results from the data executed did not show any of the movies removed in the top recommendations.</p>
+
+<p><strong><em>Table Soon</em></strong></p>
+
+<p>It's hypothesized that this is because of some of the key downsides with collaborative filtering, and that is data sparsity. Given a that a movie set has on average of 250 ratings each, this would not seem to be a problem. However, with movie data the ratings are skewed towards those blockbusters and other popular movies while less popular movies are weighed heavily by the few votes they do have. </p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/ARubberDucky/recommendercollabfiltering">Recommender System</a> is maintained by <a href="https://github.com/ARubberDucky">ARubberDucky</a>.</span>
