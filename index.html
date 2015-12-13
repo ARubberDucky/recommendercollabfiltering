@@ -24,7 +24,7 @@
 
 <p>For businesses it is important to have knowledge about what users enjoy buying in order to provide them with better shopping experience. For example, a person buying a new television may frequently buy a surge protector to go along with it. What a recommender system does calculate the probability that a person consuming an item would likely need. Providing an opportunity for the business to sell another item.</p>
 
-<p>For this project we will be applying the same logic to movie recommendations. Given a history of what a user has watched, we will try to recommend items that they would also be interested in seeing.</p>
+<p>For this project we will be applying the same logic to movie recommendations. Given a history of what a user has watched, we will try to recommend items that they would also be interested in seeing. For this project we will see if we can get the most viewed movies to show up in the top 10 recommendations for viewers.</p>
 
 <h2>
 <a id="methods" class="anchor" href="#methods" aria-hidden="true"><span class="octicon octicon-link"></span></a>Methods</h2>
@@ -49,20 +49,17 @@
 <h3>
 <a id="procedure" class="anchor" href="#procedure" aria-hidden="true"><span class="octicon octicon-link"></span></a>Procedure</h3>
 
-<p>To measure the quality of the results. 3 random users were selected at random and 5 random movies were removed from their data set. 
-In an ideal scenario the recommendation system will recommend the movies which were removed to the user.</p>
+<p>Because of data sparcity issues that developed in testing. The procedure was modified to be done for users who had the most movies rated and having the most rated movie be the one removed from the set. The reason for this is that with collaborative filtering, each item-item comparison affects the grand total, and removing a single movie from a set with few reviews would cause a major jump in similarity. However, when you use a large enough set each rating is worth less and may be used to test more efficiently. Thus, for the user with the most movie ratings. The two most watched movies were withheld from the rating set.</p>
 
 <h2>
 <a id="results" class="anchor" href="#results" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results</h2>
 
+<p>The the user with the most ratings, the two highest rated movies were removed from the set, American Beauty and The Matrix. After the recommender had run American Beauty was listed as the Number 6 movie to recommend, while the Matrix was outside of the top 20.</p>
+
 <h2>
-<a id="results-and-discussion" class="anchor" href="#results-and-discussion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Results and Discussion</h2>
+<a id="disussion" class="anchor" href="#disussion" aria-hidden="true"><span class="octicon octicon-link"></span></a>Disussion</h2>
 
-<p>Results from the data executed did not show any of the movies removed in the top recommendations.</p>
-
-<p><strong><em>Table Soon</em></strong></p>
-
-<p>It's hypothesized that this is because of one of the key downsides with collaborative filtering, and that is data sparsity. Given a that a movie set has on average of 250 ratings each, this would not seem to be a problem. However, with movie data the ratings are skewed towards those blockbusters and other popular movies while less popular movies are weighed heavily by the few votes they do have. 
+<p>Based on the result, it's concluded that while the technique has promise, to be accurate we need an incredibly large data-set to be remotely accurate. Thus while collaborative filtering is useful it may be better to use other applications such as KNN and Neural Networks.
 <img src="https://raw.githubusercontent.com/ARubberDucky/recommendercollabfiltering/master/DataMerge/RatingCount.PNG" alt="Image of RatingsCount"></p>
 
       <footer class="site-footer">
