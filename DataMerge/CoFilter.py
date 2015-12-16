@@ -53,10 +53,10 @@ print data_neighbours
 
 data_simulated = pd.DataFrame(index=df.index, columns=df.columns)
 
-print "hi1"
+print "Checkpoint 1"
 #fill in username column
 data_simulated.ix[:,:1] = df.ix[:,:1]
-print "hi2"
+print "Checkpoint 2"
 for i in range(0, len(data_simulated.index)):
     for j in range(1, len(data_simulated.columns)):
         user = data_simulated.index[i]
@@ -70,23 +70,21 @@ for i in range(0, len(data_simulated.index)):
             user_purchases = df.ix[user, product_top_names]
 
             data_simulated.ix[i][j] = getScore(user_purchases, product_top_sims)
-print "hi3 "
+print "Checkpoint 3"
 
-data_recommend = pd.DataFrame(index=data_simulated.index, columns=['user', '1', '2', '3', '4', '5', '6'])
+data_recommend = pd.DataFrame(index=data_simulated.index, columns=['user', '1', '2', '3', '4', '5', '6','7','8','9'])
 data_recommend.ix[0:,0] = data_simulated.ix[:,0]
-print "hi4"
 for i in range(0, len(data_simulated.index)):
-    data_recommend.ix[i,1:] = data_simulated.ix[i,:].sort_values(ascending=False).ix[1:7,].index.transpose()
+    data_recommend.ix[i,1:] = data_simulated.ix[i,:].sort_values(ascending=False).ix[1:10,].index.transpose()
 
 
-print "kitty"
-print data_recommend.ix[:10,:4]
-
-data_recommend.to_csv('C:\\Users\\Will\\Desktop\\ml-1m\\DataSet\\example.csv')
+#print "kitty"
+header = ['user','1','2','3','4','5','6','7','8','9','10']
 
 
+data_recommend.to_csv('C:\\Users\\Will\\Desktop\\ml-1m\\DataSet\\example2.csv', columns=header)
 
-print "hello kitty"
+
 
 
 
